@@ -2,8 +2,27 @@ const apiUrlKrakow = 'https://api.open-meteo.com/v1/forecast?latitude=50.06&long
 const apiUrlWarsaw ='https://api.open-meteo.com/v1/forecast?latitude=52.23&longitude=21.01&current_weather=true';
 const apiUrlMarcowka ='https://api.open-meteo.com/v1/forecast?latitude=49.79&longitude=19.62&current_weather=true';
 
+const krakowButton = document.querySelector('[data-id="krakow"]');
+const marcowkaButton = document.querySelector('[data-id="marcowka"]');
+const warsawButton = document.querySelector('[data-id="warsaw"]');
 
-fetch(apiUrlKrakow).then(response => response.json())
-.then(response => {
+krakowButton.addEventListener('click', () =>{
+    fetch(apiUrlKrakow).then(response => response.json())
+    .then(response => {
     console.log(response);
+    });
+});
+
+warsawButton.addEventListener('click', () =>{
+    fetch(apiUrlWarsaw).then(response => response.json())
+    .then(response => {
+    console.log(response);
+    });
+});
+
+marcowkaButton.addEventListener('click', () =>{
+    fetch(apiUrlMarcowka).then(response => response.json())
+    .then(response => {
+    console.log(response);
+    });
 });
