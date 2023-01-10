@@ -6,6 +6,12 @@ const krakowButton = document.querySelector('[data-id="krakow"]');
 const marcowkaButton = document.querySelector('[data-id="marcowka"]');
 const warsawButton = document.querySelector('[data-id="warsaw"]');
 
+const initApiShowed = fetch(apiUrlKrakow).then(response => response.json())
+.then(response => {
+    const {current_weather} = response;
+    displayWeatherData(current_weather);
+});
+
 krakowButton.addEventListener('click', () =>{
     fetch(apiUrlKrakow).then(response => response.json())
     .then(response => {
