@@ -9,20 +9,20 @@ const warsawButton = document.querySelector('[data-id="warsaw"]');
 krakowButton.addEventListener('click', () =>{
     fetch(apiUrlKrakow).then(response => response.json())
     .then(response => {
-    console.log(response);
+        const {current_weather} = response;
     });
 });
 
 warsawButton.addEventListener('click', () =>{
     fetch(apiUrlWarsaw).then(response => response.json())
     .then(response => {
-    console.log(response);
+        const {current_weather} = response;
     });
 });
 
 marcowkaButton.addEventListener('click', () =>{
     fetch(apiUrlMarcowka).then(response => response.json())
     .then(response => {
-    console.log(response);
+        const {current_weather} = response;
     });
 });
