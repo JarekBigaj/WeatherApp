@@ -7,10 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <div id="map"></div>
-        <label id="city"></label>
-    </div>
+    <header>
+        <h1>Pogodynka</h1>
+    </header>
+    <main data-id="root">
+        <div data-id="buttonsField">
+            <button data-id="Krakow">Kraków</button>
+            <button data-id="Marcowka">Marcówka</button>
+            <button data-id="Warsaw">Warszawa</button>
+        </div>
+        <div>
+            <label data-id="time"></label>
+            <label data-id="temperature"></label>
+            <label data-id="windSpeed"></label>
+            <label data-id="weatherCode"></label>
+        </div>
+    </main>
     <script src="app.js" type="module"></script>
 </body>
 </html>
