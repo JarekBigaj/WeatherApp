@@ -9,10 +9,19 @@
     <title>Document</title>
 </head>
 <body>
-    <main class="columns is-centered mt-5" data-id="root">
+    <main class="columns is-centered mt-6 " data-id="root">
         <div class="box column is-half">
-            <div class="is-pulled-right">
-                <label class="" data-id="time"></label>
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <label class="label" data-id="date"></label>
+                    </div>
+                </div>
+                <div class="level-right">
+                    <div class="level-item">
+                        <label class="label" data-id="time"></label>
+                    </div>
+                </div>
             </div>
             <div class="has-text-centered m-5">
                 <h1 class="title">Pogodynka</h1>
@@ -22,19 +31,21 @@
                 <button class="button is-info" data-id="marcowka">Marcówka</button>
                 <button class="button is-info" data-id="warsaw">Warszawa</button>
             </div>
-            <div class="">
-                <div class="">
-                    
-                    <div class="">
-                        <label class="label" data-id="temperature"></label>
+            <div class="columns">
+                <div class="column">
+                    <div class="level-item">
+                        <label class="label is-large" data-id="temperature"></label>
                     </div>
-                    <div class="">
+                </div>
+                <div class="column">
+                    <div class="level-item has-text-centered">
                         <label class="">Prędkość wiatru : </label>
                         <label class="" data-id="windSpeed"></label>
                     </div>
-                    <div class="">
-                        <label class="">Jaka jest aktualnie pogoda : </label>
-                        <label class="" data-id="weatherCode"></label>
+                </div>
+                <div class="column">
+                    <div class="level-item">
+                        <label class="label" data-id="weatherCode"></label>
                     </div>
                 </div>
             </div>

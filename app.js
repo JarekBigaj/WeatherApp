@@ -37,23 +37,26 @@ marcowkaButton.addEventListener('click', () =>{
 });
 
 const displayWeatherData = (currentWeather) =>{
-    const timeLabel = document.querySelector('[data-id="time"]')
+    const timeLabel = document.querySelector('[data-id="time"]');
+    const dateLabel = document.querySelector('[data-id="date"');
     const tempLabel = document.querySelector('[data-id="temperature"]');
     const windSpeedLabel = document.querySelector('[data-id="windSpeed"]');
     const weatherCodeLabel = document.querySelector('[data-id="weatherCode"]');
 
     const {temperature,time,weathercode,winddirection,windspeed} = currentWeather;
+    const[dateCurrentWeather, timeCurrentWeather] = time.split("T");
+    timeLabel.textContent = timeCurrentWeather;
+    dateLabel.textContent = dateCurrentWeather;
 
-    timeLabel.textContent = time;
     tempLabel.textContent = temperature+" °C";
     windSpeedLabel.textContent = windspeed + " km/h";
-    const informationAboutCurrentWeather = Object.entries(weatherCodeList).find((weather,index) => {
-        const [code,informationAboutWeather] = weather;
-        if(parseInt(code) === weathercode){
-            return informationAboutWeather
+    const [informationAboutCurrentWeather] = Object.entries(weatherCodeList).filter(([key,value]) => {
+        if(parseInt(key)===weathercode){
+            return value;
         }
-    })
-    weatherCodeLabel.textContent = informationAboutCurrentWeather;
+    });
+    const [code,infoWeather] = informationAboutCurrentWeather;
+    weatherCodeLabel.textContent = infoWeather;
     
 }
 
