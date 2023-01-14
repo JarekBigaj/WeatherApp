@@ -45,8 +45,8 @@ const displayWeatherData = (currentWeather) =>{
     const {temperature,time,weathercode,winddirection,windspeed} = currentWeather;
 
     timeLabel.textContent = time;
-    tempLabel.textContent = temperature;
-    windSpeedLabel.textContent = windspeed;
+    tempLabel.textContent = temperature+" °C";
+    windSpeedLabel.textContent = windspeed + " km/h";
     const informationAboutCurrentWeather = Object.entries(weatherCodeList).find((weather,index) => {
         const [code,informationAboutWeather] = weather;
         if(parseInt(code) === weathercode){
@@ -56,6 +56,7 @@ const displayWeatherData = (currentWeather) =>{
     weatherCodeLabel.textContent = informationAboutCurrentWeather;
     
 }
+
 
 const weatherCodeList = {
     0 : "Clear sky",
