@@ -1,1 +1,40 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.wind{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.wind_direction {
+    --size: 6rem;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: rgba(59, 61, 231, 0.5);
+    display: grid;
+    place-items: center;
+}
+
+.wind_arrow {
+    --direction:0deg;
+    --size:1rem;
+    height: calc(var(--size)*3);
+    width: var(--size);
+    background-color: black;
+    clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    transform: translateY(-50%)
+    rotate(var(--direction));
+    transform-origin: bottom center;
+
+    transition: transform 500ms ease;
+}

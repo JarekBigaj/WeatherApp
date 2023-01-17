@@ -42,6 +42,7 @@ const displayWeatherData = (currentWeather) =>{
     const tempLabel = document.querySelector('[data-id="temperature"]');
     const windSpeedLabel = document.querySelector('[data-id="windSpeed"]');
     const weatherCodeLabel = document.querySelector('[data-id="weatherCode"]');
+    const windDirectionArrow = document.querySelector('[data-id="windDirectionArrow"]');
 
     const {temperature,time,weathercode,winddirection,windspeed} = currentWeather;
     const[dateCurrentWeather, timeCurrentWeather] = time.split("T");
@@ -57,6 +58,8 @@ const displayWeatherData = (currentWeather) =>{
     });
     const [code,infoWeather] = informationAboutCurrentWeather;
     weatherCodeLabel.textContent = infoWeather;
+    console.log(winddirection);
+    windDirectionArrow.style.setProperty('--direction',`${winddirection}deg`);
     
 }
 
